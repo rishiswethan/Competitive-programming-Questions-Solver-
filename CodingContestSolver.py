@@ -157,7 +157,6 @@ def model(X_train, Y_train, X_test, Y_test, learning_rate=0.00001, num_epochs=12
         plt.title("Learning rate =" + str(learning_rate))
         plt.show()
 
-        # lets save the parameters in a variable
         parameters = sess.run(parameters)
         print("Parameters have been trained!")
 
