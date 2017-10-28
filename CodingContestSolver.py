@@ -150,12 +150,6 @@ def model(X_train, Y_train, X_test, Y_test, learning_rate=0.00001, num_epochs=12
                 print("Cost after epoch %i: %f" % (epoch, epoch_cost))
             if print_cost == True and epoch % 5 == 0:
                 costs.append(epoch_cost)
-                # plot the cost
-        plt.plot(np.squeeze(costs))
-        plt.ylabel('cost')
-        plt.xlabel('iterations (per tens)')
-        plt.title("Learning rate =" + str(learning_rate))
-        plt.show()
 
         parameters = sess.run(parameters)
         print("Parameters have been trained!")
@@ -169,6 +163,12 @@ def model(X_train, Y_train, X_test, Y_test, learning_rate=0.00001, num_epochs=12
 
         print("Train Accuracy:", accuracy.eval({X: X_train, Y: Y_train}))
         print("Test Accuracy:", accuracy.eval({X: X_test, Y: Y_test}))
+        
+        plt.plot(np.squeeze(costs))
+        plt.ylabel('cost')
+        plt.xlabel('iterations (per tens)')
+        plt.title("Learning rate =" + str(learning_rate))
+        plt.show()
 
         # x1 = float(input("In 1"))
         # x2 = float(input("In 2"))
